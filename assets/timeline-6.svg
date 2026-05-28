@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left Ring -->
+  <circle cx="26" cy="36" r="14" stroke-width="2.5" fill="rgba(212, 175, 55, 0.05)" />
+  <!-- Right Ring -->
+  <circle cx="38" cy="28" r="14" stroke-width="2.5" fill="rgba(212, 175, 55, 0.05)" />
+  <!-- Ring Sparkles/Diamonds -->
+  <polygon points="38,8 41,12 38,14 35,12" fill="#D4AF37" stroke="none" />
+  <polygon points="26,16 28,19 26,20 24,19" fill="#D4AF37" stroke="none" />
+</svg>

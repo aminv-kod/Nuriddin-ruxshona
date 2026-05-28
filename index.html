@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaxriyor & Maryam — Свадебное приглашение / Nikoh taklifnomasi</title>
+  <meta name="description" content="Электронное приглашение на свадьбу Шахриёра и Марьям. 5 июля 2026. / Shaxriyor va Maryamning nikoh oqshomiga taklifnoma. 5-iyul 2026.">
+  <meta property="og:title" content="Shaxriyor & Maryam — Wedding Invitation">
+  <meta property="og:description" content="Желаем разделить наше счастье с вами / Baxtimizni siz bilan baham ko'rishni xohlaymiz">
+  <meta property="og:type" content="website">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" type="image/svg+xml" href="assets/rings-favicon.svg" sizes="any">
+</head>
+<body>
+
+  <div class="gateway-wrapper">
+    <!-- Floating Gold Particles Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Glassmorphic Card Container -->
+    <div class="gateway-content">
+      
+      <!-- Interlocked Rings Logo -->
+      <div class="gateway-logo">
+        <svg viewBox="0 0 100 100" width="100%" height="100%">
+          <!-- Left Ring -->
+          <path d="M38,50 C38,39.5 46.5,31 57,31 C67.5,31 76,39.5 76,50 C76,60.5 67.5,69 57,69 C46.5,69 38,60.5 38,50 Z" />
+          <!-- Right Ring -->
+          <path d="M24,50 C24,39.5 32.5,31 43,31 C53.5,31 62,39.5 62,50 C62,60.5 53.5,69 43,69 C32.5,69 24,60.5 24,50 Z" />
+        </svg>
+      </div>
+
+      <h1 class="gateway-title">Shaxriyor & Maryam</h1>
+      <p class="gateway-subtitle">05.07.2026</p>
+
+      <div class="lang-box">
+        <p class="lang-prompt">ПОЖАЛУЙСТА, ВЫБЕРИТЕ ЯЗЫК / ILTIMOS, TILNI TANLANG</p>
+        
+        <div class="lang-buttons">
+          <a href="ru.html" class="lang-btn">Русский</a>
+          <a href="uz.html" class="lang-btn">O'zbekcha</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HTML5 Canvas Particle Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Set canvas size
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // Particle Class
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = canvas.height + Math.random() * 50; // Start below screen
+          this.size = Math.random() * 2.5 + 0.5; // Fine size
+          this.speedY = -(Math.random() * 0.8 + 0.2); // Slow upward speed
+          this.speedX = Math.random() * 0.4 - 0.2; // Gentle drift
+          this.alpha = Math.random() * 0.5 + 0.3; // Random opacity
+          this.fadeSpeed = Math.random() * 0.002 + 0.001;
+        }
+
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX;
+          this.alpha -= this.fadeSpeed;
+
+          // Reset particle if off-screen or faded
+          if (this.y < -20 || this.alpha <= 0) {
+            this.reset();
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+          ctx.shadowBlur = Math.random() * 6 + 3;
+          ctx.shadowColor = '#C5A880'; // Soft antique gold glow
+          ctx.fillStyle = '#A38A67'; // Soft bronze-gold dust body
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // Initialize particles array
+      const maxParticles = 65;
+      const particles = [];
+      for (let i = 0; i < maxParticles; i++) {
+        particles.push(new Particle());
+        // Randomize initial positions so they don't all rise from bottom initially
+        particles[i].y = Math.random() * canvas.height;
+      }
+
+      // Animation Loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // ----------------------------------------------------
+      // Premium Dynamic SPA Transition & Autoplay Logic
+      // ----------------------------------------------------
+      
+      // Temporary wrapper to execute DOMContentLoaded handlers immediately if document is already loaded
+      const originalAddEventListener = document.addEventListener;
+      document.addEventListener = function(type, listener, options) {
+        if (type === 'DOMContentLoaded' && document.readyState !== 'loading') {
+          setTimeout(() => {
+            listener({ type: 'DOMContentLoaded', target: document });
+          }, 1);
+        } else {
+          originalAddEventListener.call(this, type, listener, options);
+        }
+      };
+
+      function loadPage(url) {
+        fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            // Update title and language attribute
+            document.title = doc.title;
+            document.documentElement.lang = doc.documentElement.lang;
+            
+            // Load and append stylesheets from the fetched page
+            const currentStyles = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(l => l.getAttribute('href'));
+            doc.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+              const href = link.getAttribute('href');
+              if (!currentStyles.includes(href)) {
+                const newLink = document.createElement('link');
+                newLink.rel = 'stylesheet';
+                newLink.href = href;
+                document.head.appendChild(newLink);
+              }
+            });
+            
+            // Smoothly fade out the current gateway wrapper
+            const content = document.querySelector('.gateway-content');
+            if (content) {
+              content.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+              content.style.opacity = '0';
+              content.style.transform = 'translateY(-30px)';
+            }
+            
+            setTimeout(() => {
+              // Completely replace the body content with the new page's body content
+              document.body.innerHTML = doc.body.innerHTML;
+              
+              // Load and execute scripts in strict order
+              const scripts = Array.from(doc.querySelectorAll('script'));
+              
+              function loadScript(index) {
+                if (index >= scripts.length) return;
+                const script = scripts[index];
+                const newScript = document.createElement('script');
+                
+                // Copy script attributes
+                Array.from(script.attributes).forEach(attr => {
+                  newScript.setAttribute(attr.name, attr.value);
+                });
+                
+                if (script.src) {
+                  newScript.onload = () => loadScript(index + 1);
+                  newScript.onerror = () => loadScript(index + 1);
+                  document.body.appendChild(newScript);
+                } else {
+                  newScript.textContent = script.textContent;
+                  document.body.appendChild(newScript);
+                  loadScript(index + 1);
+                }
+              }
+              
+              loadScript(0);
+              
+              // Smoothly push history state to change the URL without page reload
+              history.pushState(null, '', url);
+            }, 600);
+          })
+          .catch(err => {
+            console.error('Error in SPA page transition, falling back to direct navigation:', err);
+            window.location.href = url;
+          });
+      }
+
+      // Attach click listeners to language buttons
+      const langBtns = document.querySelectorAll('.lang-btn');
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetUrl = btn.getAttribute('href');
+          
+          // Force audio to play on the newly loaded page
+          localStorage.setItem('musicPaused', 'false');
+          
+          loadPage(targetUrl);
+        });
+      });
+
+      // Handle popstate for clean back-button navigation back to the language gateway
+      window.addEventListener('popstate', () => {
+        window.location.reload();
+      });
+    });
+  </script>
+</body>
+</html>

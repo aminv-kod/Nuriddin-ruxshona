@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Center Motif (Diamond & Leaves) -->
+  <path d="M100,10 L105,20 L100,30 L95,20 Z" fill="#D4AF37" stroke="none" />
+  <!-- Left Scrollwork -->
+  <path d="M95,20 C85,20 75,10 65,20 C55,30 45,20 30,20 C15,20 5,20 0,20" />
+  <path d="M75,17 C70,12 60,12 55,18" />
+  <circle cx="65" cy="20" r="2.5" fill="#D4AF37" stroke="none" />
+  <circle cx="30" cy="20" r="2" fill="#D4AF37" stroke="none" />
+  <!-- Right Scrollwork -->
+  <path d="M105,20 C115,20 125,10 135,20 C145,30 155,20 170,20 C185,20 195,20 200,20" />
+  <path d="M125,17 C130,12 140,12 145,18" />
+  <circle cx="135" cy="20" r="2.5" fill="#D4AF37" stroke="none" />
+  <circle cx="170" cy="20" r="2" fill="#D4AF37" stroke="none" />
+</svg>

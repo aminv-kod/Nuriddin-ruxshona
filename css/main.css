@@ -1,0 +1,177 @@
+/* CSS Design System for Shaxriyor & Maryam Wedding Invitation */
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  --bg-cream: #FAF6EE; /* Exquisite light warm cream background */
+  --bg-cream-light: #FFFDD0; /* Soft rich cream highlight (FFFDD0) */
+  --bg-cream-dark: #F3EFE0; /* Soft cream shadow / delicate sand beige */
+  --primary-emerald: #5C4D42; /* Soft warm mocha/taupe for headers and primary elements */
+  --primary-emerald-light: #8C7767; /* Soft sand / warm taupe */
+  --accent-gold: #C5A880; /* Delicate antique champagne gold */
+  --accent-gold-dark: #A88B60; /* Softer antique gold */
+  --accent-gold-light: #FAF4E5; /* Softest warm cream gold */
+  --text-charcoal: #504339; /* Deep warm espresso for extremely gentle and readable text */
+  --text-light: #FFFDF6; /* Creamy light text for dark buttons */
+  --card-glass: rgba(255, 255, 255, 0.72); /* Translucent soft cream-white glass */
+  --shadow-gold: 0 12px 40px rgba(197, 168, 128, 0.08); /* Delicate gold-champagne shadow */
+  --shadow-soft: 0 15px 35px rgba(109, 90, 76, 0.05); /* Soft shadows for 3D elements */
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Background Canvas styling */
+#bg-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-cream);
+  color: var(--text-charcoal);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .heading-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--primary-emerald);
+}
+
+.subheading-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--accent-gold-dark);
+}
+
+/* Animations & Keyframes */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-reverse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(223, 186, 115, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(223, 186, 115, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(223, 186, 115, 0); }
+}
+
+@keyframes gold-sparkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(0.8); }
+}
+
+@keyframes line-draw {
+  from { width: 0; }
+  to { width: 100px; }
+}
+
+/* CSS Animation Utility Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-reverse 7s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: 1.5rem auto;
+  width: 0;
+  transition: width 1.5s ease-out;
+}
+
+.gold-line.visible {
+  width: 150px;
+}
+
+/* IntersectionObserver Scroll Animation Defaults */
+.reveal {
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.reveal.fade-in {
+  transform: translateY(0);
+}
+
+.reveal.fade-up {
+  transform: translateY(40px);
+}
+
+.reveal.fade-down {
+  transform: translateY(-40px);
+}
+
+.reveal.fade-left {
+  transform: translateX(-40px);
+}
+
+.reveal.fade-right {
+  transform: translateX(40px);
+}
+
+.reveal.scale-up {
+  transform: scale(0.9);
+}
+
+/* Active State Triggered by JS */
+.reveal.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Staggered Delay Helpers */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-emerald);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-dark);
+}

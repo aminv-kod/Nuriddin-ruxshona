@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left Swan -->
+  <path d="M12,48 C16,48 20,44 22,36 C24,28 20,24 20,16 C20,12 24,8 26,12 C28,16 26,24 26,30 C26,38 20,46 12,48 Z" fill="rgba(212, 175, 55, 0.05)" />
+  <!-- Right Swan (facing left, making a heart shape with their necks!) -->
+  <path d="M52,48 C48,48 44,44 42,36 C40,28 44,24 44,16 C44,12 40,8 38,12 C36,16 38,24 38,30 C38,38 44,46 52,48 Z" fill="rgba(212, 175, 55, 0.05)" />
+  <!-- Water ripples -->
+  <path d="M8,54 L56,54 M16,58 L48,58" stroke-width="1.5" />
+</svg>

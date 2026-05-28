@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Glass 1 -->
+  <path d="M24,44 L24,54 M16,54 L32,54" />
+  <path d="M16,20 C16,34 24,38 24,44 L24,20 Z" fill="rgba(212, 175, 55, 0.1)" />
+  <path d="M32,20 C32,34 24,38 24,44 L24,20 Z" fill="rgba(212, 175, 55, 0.1)" />
+  <!-- Glass 2 (tilted or overlapping) -->
+  <path d="M40,44 L40,54 M32,54 L48,54" />
+  <path d="M32,20 C32,34 40,38 40,44 L40,20 Z" fill="rgba(212, 175, 55, 0.1)" />
+  <path d="M48,20 C48,34 40,38 40,44 L40,20 Z" fill="rgba(212, 175, 55, 0.1)" />
+  <!-- Sparkles -->
+  <path d="M28,10 L28,14 M28,10 L30,12 M28,10 L26,12" stroke-width="1.5" />
+  <path d="M36,8 L36,12" stroke-width="1.5" />
+  <path d="M20,12 L20,16" stroke-width="1.5" />
+</svg>
